@@ -18,12 +18,8 @@ const recordSchema = new Schema({
     type: Number,
     min: 1,
     required: true
-  },
-  totalAmount: {
-    type: Number,
-    required: true
   }
-
 })
+
 
 module.exports = mongoose.model('Record', recordSchema)

@@ -1,0 +1,24 @@
+{
+  "category": [
+    {
+      "category": "家居物業",
+      "categoryIcom": "fas fa-home"
+    },
+    {
+      "category": "交通出行",
+      "categoryIcom": "as fa-shuttle-van"
+    },
+    {
+      "category": "休閒娛樂",
+      "categoryIcom": "fas fa-grin-beam"
+    },
+    {
+      "category": "餐飲食品",
+      "categoryIcom": "fas fa-utensils"
+    },
+    {
+      "category": "其他",
+      "categoryIcom": "fas fa-pen"
+    }
+  ]
+}
