@@ -16,6 +16,7 @@ db.once('open', () => {
     Record.create({
       name: recordSeeder.record[i].name,
       category: recordSeeder.record[i].category,
+      categoryIcom: recordSeeder.record[i].categoryIcom,
       date: recordSeeder.record[i].date,
       amount: recordSeeder.record[i].amount,
     }).then(() => {

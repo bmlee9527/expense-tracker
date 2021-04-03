@@ -1,1 +1,19 @@
-<h2>hello world!</h2>
+<select name="類別" id="類別">
+  <option value="3">1</option>
+  <option value="2">2</option>
+  <option value="1">3</option>
+</select>
+
+<h3>總金額</h3>
+
+{{#each records}}
+<div class="container">
+  <div class="colunm">
+    <i class="{{this.categoryIcom}}"></i>
+    <h5>{{this.name}}</h5>
+    <h5>{{this.date}}</h5>
+    <h5>{{this.amount}}</h5>
+  </div>
+</div>
+</div>
+{{/each}}

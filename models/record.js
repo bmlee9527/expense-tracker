@@ -9,6 +9,9 @@ const recordSchema = new Schema({
     type: String,
     required: true
   },
+  categoryIcom: {
+    type: String,
+  },
   date: {
     type: Date,
     default: Date.now,
