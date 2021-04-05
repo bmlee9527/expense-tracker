@@ -8,12 +8,20 @@
 
 {{#each records}}
 <div class="container">
-  <div class="colunm">
+  <div class="row">
     <i class="{{this.categoryIcom}}"></i>
     <h5>{{this.name}}</h5>
     <h5>{{this.date}}</h5>
     <h5>{{this.amount}}</h5>
+    <form action="/records/{{this._id}}/edit" method="GET" style="display: inline;">
+      <button type=" submit">修改</button>
+    </form>
+    <form action="/records/{{this._id}}/delete" method="POST" style="display: inline;">
+      <button type="submit">刪除</button>
+    </form>
   </div>
 </div>
 </div>
 {{/each}}
+
+<a href="/records/new">Create</a>

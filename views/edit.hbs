@@ -1,0 +1,29 @@
+<form action="/records/{{record._id}}/edit" method="POST">
+  <div class="row">
+    <label for="name" class="form-label">名稱*:</label>
+    <input type="text" id="name" name="name" class="form-control" value="{{record.name}}" required>
+  </div>
+  <div class="row">
+    <label for="date" class="form-label">日期*:</label>
+    <input type="date" id="date" name="date" class="form-control" value="{{record.date}}" required>
+  </div>
+  <div class="row">
+    <label for="category" class="form-label">類別*:</label>
+    <select id="Category" name="Category">
+      <option value="家居物業/fas fa-home" {{#if (eq record.categoryIcom 'fas fa-home' )}} selected {{/if}}>家居物業</option>
+      <option value="交通出行/fas fa-shuttle-van" {{#if (eq record.categoryIcom 'fas fa-shuttle-van' )}} selected {{/if}}>
+        交通出行
+      </option>
+      <option value="休閒娛樂/fas fa-grin-beam" {{#if (eq record.categoryIcom 'fas fa-grin-beam' )}} selected {{/if}}>休閒娛樂
+      </option>
+      <option value="餐飲食品/fas fa-utensils" {{#if (eq record.categoryIcom 'fas fa-utensils' )}} selected {{/if}}>餐飲食品
+      </option>
+      <option value="其他/fas fa-pen" {{#if (eq record.categoryIcom 'fas fa-pen' )}} selected {{/if}}>其他</option>
+    </select>
+  </div>
+  <div class="row">
+    <label for="amount" class="form-label">金額*:</label>
+    <input type="number" min="1" id="amount" name="amount" class="form-control" value="{{record.amount}}" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Save</button>
+</form>
