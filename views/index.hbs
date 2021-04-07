@@ -1,37 +1,40 @@
-<form action="/" method="POST">
-  <select name="filter" id="filter" onchange="this.form.submit()">
-    <option value="" disabled selected>Category</option>
-    <option value="家居物業" {{#if (eq filter '家居物業' )}} selected {{/if}}>家居物業</option>
-    <option value="交通出行" {{#if (eq filter '交通出行' )}} selected {{/if}}>
-      交通出行
-    </option>
-    <option value="休閒娛樂" {{#if (eq filter '休閒娛樂' )}} selected {{/if}}>休閒娛樂
-    </option>
-    <option value="餐飲食品" {{#if (eq filter '餐飲食品' )}} selected {{/if}}>餐飲食品
-    </option>
-    <option value="其他" {{#if (eq filter '其他' )}} selected {{/if}}>其他</option>
-  </select>
-</form>
-
-
-<h3>總金額:{{totalAmount.amount}}</h3>
-
-{{#each records}}
-<div class="container">
-  <div class="row">
-    <i class="{{this.categoryIcom}}"></i>
-    <h5>{{this.name}}</h5>
-    <h5>{{this.date}}</h5>
-    <h5>{{this.amount}}</h5>
-    <form action="/records/{{this._id}}/edit" method="GET" style="display: inline;">
-      <button type=" submit">修改</button>
-    </form>
-    <form action="/records/{{this._id}}?_method=delete" method="POST" style="display: inline;">
-      <button type="submit">刪除</button>
-    </form>
-  </div>
+<div class="d-flex justify-content-center">
+  <form action="/" method="POST">
+    <select class="form-select-bg" style="width: 200px;" name="filter" id="filter" onchange="this.form.submit()">
+      <option value="" disabled selected>Category</option>
+      <option value="家居物業" {{#if (eq filter '家居物業' )}} selected {{/if}}>家居物業</option>
+      <option value="交通出行" {{#if (eq filter '交通出行' )}} selected {{/if}}>
+        交通出行
+      </option>
+      <option value="休閒娛樂" {{#if (eq filter '休閒娛樂' )}} selected {{/if}}>休閒娛樂
+      </option>
+      <option value="餐飲食品" {{#if (eq filter '餐飲食品' )}} selected {{/if}}>餐飲食品
+      </option>
+      <option value="其他" {{#if (eq filter '其他' )}} selected {{/if}}>其他</option>
+    </select>
+  </form>
 </div>
+<div class="d-flex justify-content-center mt-2">
+  <h3 class="d-flex align-items-end mx-2">總金額:</h3>
+  <h1>{{totalAmount.amount}}</h1>
 </div>
-{{/each}}
-
-<a href="/records/new">Create</a>
+<ul class="list-group list-group-flush m-auto" style="max-width: 840px;">
+  {{#each records}}
+  <li class=" row p-0 d-flex justify-content-md-bewteen list-group-item">
+    <div class="col-1 col-md-1 py-1"><i class="{{this.categoryIcom}} fa-2x"></i></div>
+    <div class="ms-2 me-5 col-4 col-md-6">
+      <div class="fw-bold">{{this.name}}</div>
+      <p class="mb-0" style="font-size: xx-small;">{{this.date}}</p>
+    </div>
+    <p class="col-2 col-md-2 p-0 m-0" style="font-size: 24px;">{{this.amount}}</h5>
+    <div class="col-5 col-md-3 d-flex align-items-center justify-content-center">
+      <form action="/records/{{this._id}}/edit" method="GET" style="display: inline;">
+        <button type=" submit" class="btn btn-info mx-2">修改</button>
+      </form>
+      <form action="/records/{{this._id}}?_method=delete" method="POST" style="display: inline;">
+        <button type="submit" class="btn btn-danger">刪除</button>
+      </form>
+    </div>
+  </li>
+  {{/each}}
+</ul>
