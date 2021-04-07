@@ -16,6 +16,11 @@ router.get('/', (req, res) => {
         categoryIcom: 1,
         amount: 1,
         date: 1
+      },
+    },
+    {
+      $sort: {
+        date: -1
       }
     }
   ]).exec()
