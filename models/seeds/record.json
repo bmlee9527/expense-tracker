@@ -5,7 +5,7 @@
       "name": "午餐",
       "category": "餐飲食品",
       "categoryIcom": "fas fa-utensils",
-      "date": "2021/04/01",
+      "date": "2021-04-01",
       "amount": 60
     },
     {
@@ -13,7 +13,7 @@
       "name": "晚餐",
       "category": "餐飲食品",
       "categoryIcom": "fas fa-utensils",
-      "date": "2021/04/01",
+      "date": "2021-04-01",
       "amount": 80
     },
     {
@@ -21,7 +21,7 @@
       "name": "捷運",
       "category": "交通出行",
       "categoryIcom": "fas fa-shuttle-van",
-      "date": "2021/04/01",
+      "date": "2021-04-01",
       "amount": 120
     },
     {
@@ -29,7 +29,7 @@
       "name": "電影:驚奇隊長",
       "category": "休閒娛樂",
       "categoryIcom": "fas fa-grin-beam",
-      "date": "2021/04/02",
+      "date": "2021-04-02",
       "amount": 220
     },
     {
@@ -37,7 +37,7 @@
       "name": "租金",
       "category": "家居物業",
       "categoryIcom": "fas fa-home",
-      "date": "2021/04/20",
+      "date": "2021-04-20",
       "amount": 25000
     }
   ]
