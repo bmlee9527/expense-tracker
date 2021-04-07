@@ -1,27 +1,32 @@
-<form action="/records" method="POST">
+<form action="/records" method="POST" class="m-auto" style="max-width: 320px;">
   <div class="row">
-    <label for="name" class="form-label">名稱*:</label>
-    <input type="text" id="name" name="name" class="form-control" required>
+    <div class="input-group mb-3 row">
+      <label for="name" class="form-label col-3 mb-0 p-1">名稱*:</label>
+      <input type="text" id="name" name="name" class="form-control" required>
+    </div>
+    <div class="input-group mb-3 row">
+      <label for="date" class="form-label col-3 mb-0 p-1">日期*:</label>
+      <input type="date" id="date" name="date" class="form-control" value="2021-04-01" required>
+    </div>
+    <div class="input-group mb-3 row">
+      <label for="category" class="form-label col-3 mb-0 p-1">類別*:</label>
+      <select id="Category" name="Category">
+        <option value="家居物業/fas fa-home">家居物業</option>
+        <option value="交通出行/fas fa-shuttle-van">交通出行</option>
+        <option value="休閒娛樂/fas fa-grin-beam">休閒娛樂</option>
+        <option value="餐飲食品/fas fa-utensils">餐飲食品</option>
+        <option value="其他/fas fa-pen">其他</option>
+      </select>
+    </div>
+    <div class="input-group mb-3 row">
+      <label for="amount" class="form-label col-3 mb-0 p-1">金額*:</label>
+      <input type="number" min="1" id="amount" name="amount" class="form-control" required>
+    </div>
+    <div class="col-12 d-flex justify-content-center">
+      <button type="submit" class="btn btn-primary">Create</button>
+    </div>
+
   </div>
-  <div class="row">
-    <label for="date" class="form-label">日期*:</label>
-    <input type="date" id="date" name="date" class="form-control" value="2021-04-01" required>
-  </div>
-  <div class="row">
-    <label for="category" class="form-label">類別*:</label>
-    <select id="Category" name="Category">
-      <option value="家居物業/fas fa-home">家居物業</option>
-      <option value="交通出行/fas fa-shuttle-van">交通出行</option>
-      <option value="休閒娛樂/fas fa-grin-beam">休閒娛樂</option>
-      <option value="餐飲食品/fas fa-utensils">餐飲食品</option>
-      <option value="其他/fas fa-pen">其他</option>
-    </select>
-  </div>
-  <div class="row">
-    <label for="amount" class="form-label">金額*:</label>
-    <input type="number" min="1" id="amount" name="amount" class="form-control" required>
-  </div>
-  <button type="submit" class="btn btn-primary">Create</button>
 </form>
 
 <script>
