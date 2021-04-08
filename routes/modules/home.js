@@ -27,7 +27,7 @@ router.get('/', (req, res) => {
 
   Promise.all([amount, records])
     .then(([amount, records]) => {
-      const totalAmount = amount[0]
+      const totalAmount = amount[0] || { amount: '尚未有消費' }
       res.render('index', { totalAmount, records })
     })
     .catch(error => console.log(error))
