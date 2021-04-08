@@ -36,7 +36,6 @@ router.post('/', (req, res) => {
   Promise.all([amount, records])
     .then(([amount, records]) => {
       const totalAmount = amount[0] || { amount: '尚未有消費' }
-      console.log(totalAmount)
       res.render('index', { totalAmount, records, filter })
     })
     .catch(error => console.log(error))
