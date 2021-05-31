@@ -3,12 +3,21 @@ const router = express.Router()
 const Record = require('../../models/record')
 
 router.get('/', (req, res) => {
+  const userId = req.user._id
   const amount = Record.aggregate([
+    {
+      $match: { userId }
+    }
+    ,
     {
       $group: { _id: null, amount: { $sum: "$amount" } }
     }
   ]).exec()
   const records = Record.aggregate([
+    {
+      $match: { userId }
+    }
+    ,
     {
       $project: {
         name: 1,

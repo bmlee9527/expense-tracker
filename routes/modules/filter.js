@@ -3,10 +3,11 @@ const router = express.Router()
 const Record = require('../../models/record')
 
 router.post('/', (req, res) => {
+  const userId = req.user._id
   const filter = req.body.filter
   const amount = Record.aggregate([
     {
-      $match: { category: filter }
+      $match: { category: filter, userId }
     },
     {
       $group: { _id: null, amount: { $sum: "$amount" } }
@@ -15,7 +16,7 @@ router.post('/', (req, res) => {
 
   const records = Record.aggregate([
     {
-      $match: { category: filter }
+      $match: { category: filter, userId }
     },
     {
       $project: {
