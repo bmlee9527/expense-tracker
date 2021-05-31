@@ -10,4 +10,7 @@ router.use('/records', crud)
 const filter = require('./modules/filter')
 router.use('/', filter)
 
+const users = require('./modules/users')
+router.use('/users', users)
+
 module.exports = router
