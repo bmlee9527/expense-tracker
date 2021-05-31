@@ -23,6 +23,11 @@
       </select>
     </div>
     <div class="input-group mb-3 row">
+      <label for="merchant" class="form-label col-3 mb-0 p-1">商家*:</label>
+      <input type="merchant" id="merchant" name="merchant" class="form-control col-9" value="{{record.merchant}}"
+        required>
+    </div>
+    <div class="input-group mb-3 row">
       <label for="amount" class="form-label col-3 mb-0 p-1">金額*:</label>
       <input type="number" min="1" id="amount" name="amount" class="form-control col-9" value="{{record.amount}}"
         required>

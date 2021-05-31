@@ -22,12 +22,13 @@
   {{#each records}}
   <li class=" row p-0 d-flex justify-content-md-bewteen list-group-item">
     <div class="col-1 col-md-1 py-1"><i class="{{this.categoryIcom}} fa-2x"></i></div>
-    <div class="ms-2 me-5 col-4 col-md-6">
+    <div class="ms-2 me-5 col-2 col-md-2">
       <div class="fw-bold">{{this.name}}</div>
       <p class="mb-0" style="font-size: xx-small;">{{this.date}}</p>
     </div>
+    <p class="col-4 col-md-3 p-0 m-0" style="font-size: 24px;">{{this.merchant}}</p>
     <p class="col-2 col-md-2 p-0 m-0" style="font-size: 24px;">{{this.amount}}</h5>
-    <div class="col-5 col-md-3 d-flex align-items-center justify-content-center">
+    <div class="col-3 col-md-4 d-flex align-items-center justify-content-center">
       <form action="/records/{{this._id}}/edit" method="GET" style="display: inline;">
         <button type=" submit" class="btn btn-info mx-2">修改</button>
       </form>

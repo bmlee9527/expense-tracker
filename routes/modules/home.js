@@ -24,6 +24,7 @@ router.get('/', (req, res) => {
         category: 1,
         categoryIcom: 1,
         amount: 1,
+        merchant: 1,
         date: 1
       },
     },
