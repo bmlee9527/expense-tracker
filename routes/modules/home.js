@@ -9,7 +9,6 @@ router.get('/', (req, res) => {
   const time = req.query.time || ''
   const [year, month] = time.split('-')
   const categoryfilter = req.query.filter || ''
-  console.log(categoryfilter)
 
   Record.find(Filter(categoryfilter, userId))
     .sort({ date: 'desc' })
