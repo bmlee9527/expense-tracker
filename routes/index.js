@@ -10,5 +10,5 @@ const { authenticator } = require('../middleware/auth')
 router.use('/records', authenticator, crud)
 router.use('/users', users)
 router.use('/', authenticator, home)
-router.use('/', authenticator, filter)
+// router.use('/', authenticator, filter)
 module.exports = router

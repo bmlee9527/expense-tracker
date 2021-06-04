@@ -1,46 +1,42 @@
 const express = require('express')
 const router = express.Router()
 const Record = require('../../models/record')
+const Category = require('../../models/category')
+const Filter = require('../../config/filter')
 
 router.get('/', (req, res) => {
   const userId = req.user._id
-  const amount = Record.aggregate([
-    {
-      $match: { userId }
-    }
-    ,
-    {
-      $group: { _id: null, amount: { $sum: "$amount" } }
-    }
-  ]).exec()
-  const records = Record.aggregate([
-    {
-      $match: { userId }
-    }
-    ,
-    {
-      $project: {
-        name: 1,
-        category: 1,
-        categoryIcom: 1,
-        amount: 1,
-        merchant: 1,
-        date: 1
-      },
-    },
-    {
-      $sort: {
-        date: -1
-      }
-    }
-  ]).exec()
+  const time = req.query.time || ''
+  const [year, month] = time.split('-')
+  const categoryfilter = req.query.filter || ''
+  console.log(categoryfilter)
 
-  Promise.all([amount, records])
-    .then(([amount, records]) => {
-      const totalAmount = amount[0] || { amount: '尚未有消費' }
-      res.render('index', { totalAmount, records })
+  Record.find(Filter(categoryfilter, userId))
+    .sort({ date: 'desc' })
+    .lean()
+    .then(records => {
+      if (time) {
+        records = records.filter(each => {
+          if (each.date.includes(year) && each.date.includes(month)) {
+            return each
+          }
+        })
+      }
+      const totalAmountList = []
+      records.forEach(data => totalAmountList.push(Number(data.amount)))
+      let totalAmount = totalAmountList.reduce((acc, cur) => acc + cur, 0)
+      Category.find({})
+        .lean()
+        .then(category => res.render('index', {
+          records,
+          category,
+          categoryfilter,
+          totalAmount,
+          time
+        }))
     })
-    .catch(error => console.log(error))
+    .catch(err => console.error(err))
+
 })
 
 module.exports = router

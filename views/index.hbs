@@ -1,22 +1,20 @@
 <div class="d-flex justify-content-center">
-  <form action="/" method="POST">
-    <select class="form-select-bg" style="width: 200px;" name="filter" id="filter" onchange="this.form.submit()">
+  <form action="/" method="GET">
+    <div class="form-group mx-1 mb-0">
+      <input type="month" class="form-control" name="time" placeholder="月份" onchange="submit()" value="{{time}}">
+    </div>
+    <select class="form-select-bg" style="width: 200px;" name="filter" id="filter" onchange="submit()">
       <option value="" disabled selected>Category</option>
-      <option value="家居物業" {{#if (eq filter '家居物業' )}} selected {{/if}}>家居物業</option>
-      <option value="交通出行" {{#if (eq filter '交通出行' )}} selected {{/if}}>
-        交通出行
+      {{#each category}}
+      <option value="{{this.category}}" {{#if (eq ../categoryfilter this.category )}} selected {{/if}}>{{this.category}}
       </option>
-      <option value="休閒娛樂" {{#if (eq filter '休閒娛樂' )}} selected {{/if}}>休閒娛樂
-      </option>
-      <option value="餐飲食品" {{#if (eq filter '餐飲食品' )}} selected {{/if}}>餐飲食品
-      </option>
-      <option value="其他" {{#if (eq filter '其他' )}} selected {{/if}}>其他</option>
+      {{/each}}
     </select>
   </form>
 </div>
 <div class="d-flex justify-content-center mt-2">
   <h3 class="d-flex align-items-end mx-2">總金額:</h3>
-  <h1>{{totalAmount.amount}}</h1>
+  <h1>{{totalAmount}}</h1>
 </div>
 <ul class="list-group list-group-flush m-auto" style="max-width: 840px;">
   {{#each records}}
