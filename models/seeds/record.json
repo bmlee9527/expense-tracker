@@ -5,7 +5,8 @@
       "name": "午餐",
       "category": "餐飲食品",
       "categoryIcom": "fas fa-utensils",
-      "date": "2021-04-01",
+      "date": "2021-06-01",
+      "merchant": "7-11",
       "amount": 60
     },
     {
@@ -13,7 +14,8 @@
       "name": "晚餐",
       "category": "餐飲食品",
       "categoryIcom": "fas fa-utensils",
-      "date": "2021-04-01",
+      "date": "2021-05-01",
+      "merchant": "全家",
       "amount": 80
     },
     {
@@ -22,6 +24,7 @@
       "category": "交通出行",
       "categoryIcom": "fas fa-shuttle-van",
       "date": "2021-04-01",
+      "merchant": "台北捷運",
       "amount": 120
     },
     {
@@ -30,6 +33,7 @@
       "category": "休閒娛樂",
       "categoryIcom": "fas fa-grin-beam",
       "date": "2021-04-02",
+      "merchant": "威秀影城",
       "amount": 220
     },
     {
@@ -37,7 +41,8 @@
       "name": "租金",
       "category": "家居物業",
       "categoryIcom": "fas fa-home",
-      "date": "2021-04-20",
+      "date": "2021-01-20",
+      "merchant": "住家租金",
       "amount": 25000
     }
   ]
