@@ -6,9 +6,12 @@ const bodyParser = require('body-parser')
 const methodOverride = require('method-override')
 const routes = require('./routes')
 require('./config/mongoose')
+if (process.env.NODE_ENV !== 'production') {
+  require('dotenv').config()
+}
 
 const app = express()
-const PORT = process.env.PORT || 3000
+const PORT = process.env.PORT
 
 app.engine('hbs', exphbs({
   defaultLayout: 'main', extname: '.hbs',
@@ -16,7 +19,7 @@ app.engine('hbs', exphbs({
 }))
 app.set('view engine', 'hbs')
 app.use(session({
-  secret: 'ThisIsMySecret',
+  secret: process.env.SECRET,
   resave: false,
   saveUninitialized: true
 }))

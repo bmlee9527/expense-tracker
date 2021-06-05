@@ -52,13 +52,29 @@ cd expense-tracker
 在 Terminal 輸入 npm run seed 指令
 ```
 
-6. 啟動伺服器，執行 app.js 檔案
+6. 修改.env.expample檔案
+
+```
+.env.expample 改為 .env
+```
+
+7. 啟動伺服器，執行 app.js 檔案
 
 ```
 在 Terminal 輸入 npm run dev
 ```
 
 請至 [http://localhost:3000](http://localhost:3000) 使用網頁
+
+使用以下帳號密碼使用
+
+  email: user1@example.com
+  password: 12345678
+
+  email: user2@example.com
+  password: 12345678
+
+
 
 
 
