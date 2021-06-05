@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
     .then(records => {
       if (time) {
         records = records.filter(each => {
-          if (each.date.includes(year) && each.date.includes(month)) {
+          if (each.date.split("-")[0].includes(year) && each.date.split("-")[1].includes(month)) {
             return each
           }
         })
